@@ -13,19 +13,21 @@ export default class Home extends Component {
       {({router}) => (
       <div>
         <Header />
-        <Content>
-          <div>
-            <h1>Welcome to Fitcabin!</h1>
-            <div className="login__link">
-              <p><Link to="/login" className="login">Login</Link></p>
+        <div className="hero">
+          <Content>
+            <div className="login-home__section">
+             
+              <div className="login__link">
+                <p><Link to="/login" className="login">Login</Link></p>
+              </div>
+              <div className="register__link">
+                <p><Link to="/register" className="navbar-brand">Register</Link></p>
+              </div>
             </div>
-            <div className="register__link">
-              <p><Link to="/register" className="navbar-brand">Register</Link></p>
-            </div>
-          </div>
-          <Match pattern="/login" component={Login} />
-          <Match pattern="/register" component={Register} />
-        </Content>
+            <Match pattern="/login" component={Login} />
+            <Match pattern="/register" component={Register} />
+          </Content>
+        </div>
       </div>
       )}
       </BrowserRouter>

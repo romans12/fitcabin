@@ -127,7 +127,7 @@ export default class App extends React.Component  {
               </Header>
               <Content>
                   <div className="row">
-                    <Match pattern='/' exactly component={Content} />
+                    <Match pattern='/' exactly component={Dashboard} />
                     <MatchWhenUnauthed authed={this.state.authed} pattern='/login' component={Login} />
                     <MatchWhenUnauthed authed={this.state.authed} pattern='/register' component={Register} />
                     <MatchWhenAuthed authed={this.state.authed} pattern='/dashboard' component={Dashboard} />

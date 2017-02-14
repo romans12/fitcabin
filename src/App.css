@@ -42,9 +42,9 @@ body {
 .container {
         max-width: 1200px;
         position: relative;
-          margin: 0 auto;
-          padding: 0 20px;
-          box-sizing: border-box;
+        margin: 0 auto;
+        padding: 0 20px;
+        box-sizing: border-box;
 }
 .container.container--large {
   max-width: 2000px;
@@ -581,4 +581,48 @@ li a {
   width: 200px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.hero {
+  height: calc(100vh);
+  background-color: white;
+  padding-top: 50px;
+  padding-bottom:50px;
+}
+
+.login-home__section {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.login__link a, .register__link a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 100;
+    padding: 12px 20px;
+    background: #38C1E6;
+    border-radius: 3px;
+}
+
+@media (max-width: 1150px) {
+  .user__profile, .AddActivity {
+    max-width: 375px;
+  }
+  .rdtPicker {
+    width: 450px;
+  }
+  .user__profile--image img {
+    max-width: 120px;
+  }
+  .user__profile--content h2:after {
+    width: 89%;
+    margin-top: 37px;
+  }
+  .user__profile--content h2 {
+    font-size: 24px;
+  }
 }
