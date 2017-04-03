@@ -70,7 +70,17 @@ const getCurrentWeek = () => {
 Promise.all([getUserInfo(), getCurrentWeek()])
 
 export default class Dashboard extends React.Component  {
- 
+  
+  constructor(props) {
+      super(props);
+      this.state = {
+    	goalDistance: '',
+    	goalDistanceMeasure: 'mi'
+	  };
+
+	  this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
   componentWillMount() {
   	getUserInfo()
   	getCurrentWeek()
@@ -79,6 +89,28 @@ export default class Dashboard extends React.Component  {
   componentWillUnmount(){
     removeListener()
   }
+
+  handleSubmit(e){
+  	  e.preventDefault();
+
+  	  if (this.state.goalDistance === '') {
+  	  	this.setState({goalDistance: 0})
+  	  }
+
+  	  
+
+  	  this.setState({
+    	goalDistance: ''
+	  });
+
+  }
+
+  handleChange(name, e) {
+  	  let change = {};
+  	  change[name] = e.target.value;
+  	  this.setState(change);
+  }
+
 
   render() {
 
@@ -90,9 +122,24 @@ export default class Dashboard extends React.Component  {
         </div>
         <div className="user__profile--content">
           <h2>Hello, {userName}!</h2>
+          <div className="weekly-goal__container">
+            <form onSubmit={this.handleSubmit}>
+	          <label className="weekly-goal__content">What is your weekly goal?
+	    	    <input type="number" placeholder="0" value={this.state.goalDistance} onChange={this.handleChange.bind(this, 'goalDistance')} />
+	    	    <select className="measurement__selector" value={this.state.goalDistanceMeasure} onChange={this.handleChange.bind(this, 'goalDistanceMeasure')}>
+					<option value="mi">mi</option>
+					<option value="km">km</option>
+				</select>
+				<span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"/></svg></span>
+    	  	   </label>
+    	  	   <div className="weekly-goal__button">
+			  	 <input type="submit" value="Submit" />
+			   </div>
+			</form>
+    	  </div>
         </div>
       </div>
-      <div className="mileage__chart">
+      <div className="mileage__chart"> 
       	<MileageChart value={weekDistance} />
       </div>
      </div>

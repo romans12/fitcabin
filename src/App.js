@@ -133,12 +133,12 @@ export default class App extends React.Component  {
                     <MatchWhenAuthed authed={this.state.authed} pattern='/dashboard' component={Dashboard} />
                     <Miss render={() => <h3>No Match</h3>} />
                   </div>
-              <AddActivity add={this.handleAddItem.bind(this)}/>
-              {this.state.loading === true ? <h3> LOADING... </h3> : 
-                <List items={this.state.list} remove={this.handleRemoveItem.bind(this)}
-              />
-              }
-            </Content>
+                  <AddActivity add={this.handleAddItem.bind(this)}/>
+                  {this.state.loading === true ? <h3> LOADING... </h3> : 
+                    <List items={this.state.list} remove={this.handleRemoveItem.bind(this)}
+                  />
+                  }
+              </Content>
           </div>
           )}
       </BrowserRouter>

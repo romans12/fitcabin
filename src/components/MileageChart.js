@@ -10,7 +10,12 @@ export default class MileageChart extends React.Component  {
 		const halfsize = (this.props.size * 0.5);
 	    const radius = halfsize - (this.props.strokewidth * 0.5);
 	    const circumference = 2 * Math.PI * radius;
-	    const strokeval = ((this.props.value * circumference) / 100);
+
+	    /* Hard coding the goal mileage here of 42 miles.
+	    Eventually, the app will be able to ask the user their goal mileage/km
+	    and have the SVG adjust accordingly. */
+	    
+	    const strokeval = ((this.props.value * circumference) / 42);
 	    const dashval = (strokeval + ' ' + circumference);
 
 	    const trackstyle = {strokeWidth: this.props.strokewidth};
