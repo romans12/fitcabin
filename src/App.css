@@ -1,5 +1,8 @@
 body {
   background-color: #F3F3F3;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 select:focus, input:focus {
   outline: none;
@@ -34,10 +37,6 @@ select:focus, input:focus {
 .logo img {
         max-width: 100px;
         margin: 10px;
-}
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
 }
 .container {
         max-width: 1200px;
@@ -96,7 +95,7 @@ li a {
 .logo {
   width: 25%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 input {
@@ -116,7 +115,7 @@ select {
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
-    max-height: 330px;
+    max-height: 350px;
     border-radius: 20px;
 }
 .list-group {
@@ -205,7 +204,7 @@ select {
     text-align: center;
     font-size: 14px;
     padding: 10px 0 10px 0;
-    margin-top: 25px;
+    margin-top: 27px;
 }
 .activity__distance label, .activity__duration label {
   position: relative;
@@ -214,6 +213,9 @@ select {
     color: #ccc;
     letter-spacing: .5px;
     text-align: center;
+}
+.activity__distance label {
+  margin-left: 3px;
 }
 .activity__distance select::after {
   margin-right: -5px;
@@ -426,7 +428,7 @@ li a {
   padding-top: 10px;
 }
 .rdtPicker thead tr {
-  max-height: 28px;
+  max-height: 26px;
   padding-top: 14px;
 }
 .rdtPicker tfoot {
@@ -624,5 +626,30 @@ li a {
   }
   .user__profile--content h2 {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 950px) {
+    .activity__button input {
+      max-width: 900px;
+    }
+    .AddActivity {
+      max-width: 100%;
+    }
+    .mileage__chart {
+      width: 45%;
+    }
+    .rdtPicker {
+      display: none;
+    } 
+}
+
+@media (max-width: 750px) {
+  .user__profile {
+    max-width: 800px;
+    width: 100%;
+  }
+  .mileage__chart {
+    display: none;
   }
 }
